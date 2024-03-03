@@ -80,14 +80,18 @@ public class AppointmentService
 
     private AppointmentDTO? ToAppointmentDTO(Appointment appointment)
     {
+        DoctorRepo doctorRepo = new();
+        Doctor? doctor = doctorRepo.GetById(appointment.DoctorId);
+        PatienRepo patienRepo = new();
+        Patient? patient = patienRepo.GetById(appointment.PatientId);
         return appointment is null ? null :
             new AppointmentDTO(
                 appointment.Id.ToString(),
                 appointment.DataTime.ToString(),
-                appointment.Patient.FirstName,
-                appointment.Patient.LastName,
-                appointment.Doctor.FirstName,
-                appointment.Doctor.LastName,
+                patient.FirstName,
+                patient.LastName,
+                doctor.FirstName,
+                doctor.LastName,
                 appointment.Desctiprion
             );
     }

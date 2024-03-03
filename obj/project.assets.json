@@ -1557,32 +1557,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arc4e\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\xlamp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arc4e\\source\\repos\\Clinika\\Clinica.csproj",
+      "projectUniqueName": "Z:\\Projects\\C#\\Clinika\\Clinica.csproj",
       "projectName": "Clinica",
-      "projectPath": "C:\\Users\\arc4e\\source\\repos\\Clinika\\Clinica.csproj",
-      "packagesPath": "C:\\Users\\arc4e\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arc4e\\source\\repos\\Clinika\\obj\\",
+      "projectPath": "Z:\\Projects\\C#\\Clinika\\Clinica.csproj",
+      "packagesPath": "C:\\Users\\xlamp\\.nuget\\packages\\",
+      "outputPath": "Z:\\Projects\\C#\\Clinika\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arc4e\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\xlamp\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
