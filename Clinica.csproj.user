@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="View\AppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\DoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
