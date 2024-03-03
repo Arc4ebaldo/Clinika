@@ -39,14 +39,14 @@
             pictureBox2 = new PictureBox();
             BackBtn = new Button();
             FindBtn = new Button();
-            button3 = new Button();
+            AddBtn = new Button();
             EditBtn = new Button();
             SealBtn = new Button();
             DeleteBtn = new Button();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            ID_Pachient = new TextBox();
+            ID_Patient = new TextBox();
             label1 = new Label();
             AllAppointment = new DataGridView();
             DataTime = new MaskedTextBox();
@@ -148,23 +148,24 @@
             FindBtn.Text = "ПОИСК";
             FindBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // AddBtn
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.LightSkyBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
-            button3.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 14.25F);
-            button3.ForeColor = Color.FromArgb(15, 15, 15);
-            button3.Location = new Point(884, 104);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 45);
-            button3.TabIndex = 56;
-            button3.Text = "ДОБАВИТЬ";
-            button3.UseVisualStyleBackColor = false;
+            AddBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddBtn.BackColor = Color.LightSkyBlue;
+            AddBtn.Cursor = Cursors.Hand;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
+            AddBtn.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
+            AddBtn.FlatStyle = FlatStyle.Flat;
+            AddBtn.Font = new Font("Century Gothic", 14.25F);
+            AddBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            AddBtn.Location = new Point(884, 104);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(150, 45);
+            AddBtn.TabIndex = 56;
+            AddBtn.Text = "ДОБАВИТЬ";
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
             // 
             // EditBtn
             // 
@@ -183,6 +184,7 @@
             EditBtn.TabIndex = 55;
             EditBtn.Text = "ИЗМЕНИТЬ";
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
             // SealBtn
             // 
@@ -201,6 +203,7 @@
             SealBtn.TabIndex = 54;
             SealBtn.Text = "ПЕЧАТЬ";
             SealBtn.UseVisualStyleBackColor = false;
+            SealBtn.Click += SealBtn_Click;
             // 
             // DeleteBtn
             // 
@@ -219,12 +222,13 @@
             DeleteBtn.TabIndex = 53;
             DeleteBtn.Text = "УДАЛИТЬ";
             DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(568, 9);
+            label4.Location = new Point(577, 9);
             label4.Name = "label4";
             label4.Size = new Size(216, 22);
             label4.TabIndex = 51;
@@ -234,11 +238,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(412, 9);
+            label3.Location = new Point(419, 9);
             label3.Name = "label3";
-            label3.Size = new Size(93, 22);
+            label3.Size = new Size(122, 22);
             label3.TabIndex = 50;
-            label3.Text = "ID Врача";
+            label3.Text = "ФИО Врача";
             // 
             // label2
             // 
@@ -246,21 +250,21 @@
             label2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label2.Location = new Point(257, 9);
             label2.Name = "label2";
-            label2.Size = new Size(127, 22);
+            label2.Size = new Size(156, 22);
             label2.TabIndex = 49;
-            label2.Text = "ID Пациента";
+            label2.Text = "ФИО Пациента";
             // 
-            // ID_Pachient
+            // ID_Patient
             // 
-            ID_Pachient.BackColor = Color.LightSkyBlue;
-            ID_Pachient.BorderStyle = BorderStyle.FixedSingle;
-            ID_Pachient.Cursor = Cursors.IBeam;
-            ID_Pachient.Font = new Font("Century Gothic", 12F);
-            ID_Pachient.ForeColor = Color.FromArgb(15, 15, 15);
-            ID_Pachient.Location = new Point(257, 51);
-            ID_Pachient.Name = "ID_Pachient";
-            ID_Pachient.Size = new Size(127, 27);
-            ID_Pachient.TabIndex = 1;
+            ID_Patient.BackColor = Color.LightSkyBlue;
+            ID_Patient.BorderStyle = BorderStyle.FixedSingle;
+            ID_Patient.Cursor = Cursors.IBeam;
+            ID_Patient.Font = new Font("Century Gothic", 12F);
+            ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
+            ID_Patient.Location = new Point(257, 51);
+            ID_Patient.Name = "ID_Patient";
+            ID_Patient.Size = new Size(127, 27);
+            ID_Patient.TabIndex = 1;
             // 
             // label1
             // 
@@ -313,6 +317,7 @@
             AllAppointment.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllAppointment.Size = new Size(853, 566);
             AllAppointment.TabIndex = 42;
+            AllAppointment.RowHeaderMouseClick += AllAppointment_RowHeaderMouseClick;
             // 
             // DataTime
             // 
@@ -335,7 +340,7 @@
             ID_Doctor.Cursor = Cursors.IBeam;
             ID_Doctor.Font = new Font("Century Gothic", 12F);
             ID_Doctor.ForeColor = Color.FromArgb(15, 15, 15);
-            ID_Doctor.Location = new Point(412, 51);
+            ID_Doctor.Location = new Point(419, 51);
             ID_Doctor.Name = "ID_Doctor";
             ID_Doctor.Size = new Size(127, 27);
             ID_Doctor.TabIndex = 2;
@@ -347,10 +352,11 @@
             Problem.Cursor = Cursors.IBeam;
             Problem.Font = new Font("Century Gothic", 12F);
             Problem.ForeColor = Color.FromArgb(15, 15, 15);
-            Problem.Location = new Point(568, 51);
+            Problem.Location = new Point(577, 51);
             Problem.Name = "Problem";
             Problem.Size = new Size(216, 27);
             Problem.TabIndex = 3;
+            Problem.Text = " ";
             // 
             // AppointmentForm
             // 
@@ -367,14 +373,14 @@
             Controls.Add(pictureBox2);
             Controls.Add(BackBtn);
             Controls.Add(FindBtn);
-            Controls.Add(button3);
+            Controls.Add(AddBtn);
             Controls.Add(EditBtn);
             Controls.Add(SealBtn);
             Controls.Add(DeleteBtn);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(ID_Pachient);
+            Controls.Add(ID_Patient);
             Controls.Add(label1);
             Controls.Add(AllAppointment);
             FormBorderStyle = FormBorderStyle.None;
@@ -399,14 +405,14 @@
         private PictureBox pictureBox2;
         private Button BackBtn;
         private Button FindBtn;
-        private Button button3;
+        private Button AddBtn;
         private Button EditBtn;
         private Button SealBtn;
         private Button DeleteBtn;
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox ID_Pachient;
+        private TextBox ID_Patient;
         private Label label1;
         private DataGridView AllAppointment;
         private MaskedTextBox DataTime;

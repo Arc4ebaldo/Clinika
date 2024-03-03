@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Clinica.DTO;
+using Clinica.Models;
+using Clinica.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Clinica.View
 {
@@ -18,9 +23,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
+        private AppointmentService appointment = new();
+        private string ID;
+
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
-
+            AllAppointment.DataSource = appointment.GetAllAppointments();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -69,6 +77,92 @@ namespace Clinica.View
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
+            string[] Fio_Doctor = ID_Doctor.Text.Split(" ");
+
+
+            AppointmentDTO newAppoint = new AppointmentDTO(
+                    DataTime.Text,
+                    Fio_Patient[0],
+                    Fio_Patient[1],
+                    Fio_Doctor[0],
+                    Fio_Doctor[1],
+                    Problem.Text
+                );
+            appointmentService.CreateAppointment(newAppoint);
+            AllAppointment.DataSource = appointmentService.GetAllAppointments();
+
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            appointmentService.DeleteAppointmentById(int.Parse(ID));
+            AllAppointment.DataSource = appointmentService.GetAllAppointments();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
+            string[] Fio_Doctor = ID_Doctor.Text.Split(" ");
+
+            AppointmentDTO newAppoint = new AppointmentDTO(
+                DataTime.Text,
+                Fio_Patient[0],
+                Fio_Patient[1],
+                Fio_Doctor[0],
+                Fio_Doctor[1],
+                Problem.Text
+             );
+                appointmentService.UpdatePatient(newAppoint);
+                AllAppointment.DataSource = appointmentService.GetAllAppointments();
+        }
+
+        private void AllAppointment_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
+            string[] Fio_Doctor = ID_Doctor.Text.Split(" ");
+
+            DataGridViewSelectedCellCollection selectedCells = AllAppointment.SelectedCells;
+            DataTime.Text = selectedCells[0].Value.ToString();
+            Fio_Patient[0] = selectedCells[1].Value.ToString();
+            Fio_Patient[1] = selectedCells[2].Value.ToString();
+            Fio_Doctor[0] = selectedCells[3].Value.ToString();
+            Problem.Text = selectedCells[4].Value.ToString();
+        }
+
+        private string result = "";
+
+        private void SealBtn_Click(object sender, EventArgs e)
+        {
+            result = "Строка 1\n\n";
+
+            result += "Строка 2\nСтрока 3";
+
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
+
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
     }
 }

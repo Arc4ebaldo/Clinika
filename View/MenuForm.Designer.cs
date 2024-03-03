@@ -124,6 +124,7 @@
             historyBtn.Size = new Size(234, 45);
             historyBtn.TabIndex = 4;
             historyBtn.Text = "ИСТОРИЯ БОЛЕЗНЕЙ";
+            historyBtn.TextAlign = ContentAlignment.MiddleRight;
             historyBtn.UseVisualStyleBackColor = false;
             historyBtn.Click += historyBtn_Click;
             // 
@@ -137,6 +138,8 @@
             serviceBtn.FlatStyle = FlatStyle.Flat;
             serviceBtn.Font = new Font("Century Gothic", 14.25F);
             serviceBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            serviceBtn.Image = Properties.Resources.medikal;
+            serviceBtn.ImageAlign = ContentAlignment.MiddleLeft;
             serviceBtn.Location = new Point(12, 414);
             serviceBtn.Name = "serviceBtn";
             serviceBtn.Size = new Size(234, 45);
@@ -155,11 +158,14 @@
             apoointmentBtn.FlatStyle = FlatStyle.Flat;
             apoointmentBtn.Font = new Font("Century Gothic", 14.25F);
             apoointmentBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            apoointmentBtn.Image = Properties.Resources.blok;
+            apoointmentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             apoointmentBtn.Location = new Point(12, 341);
             apoointmentBtn.Name = "apoointmentBtn";
             apoointmentBtn.Size = new Size(234, 45);
             apoointmentBtn.TabIndex = 2;
             apoointmentBtn.Text = "ЗАПИСИ НА ПРИЁМ";
+            apoointmentBtn.TextAlign = ContentAlignment.MiddleRight;
             apoointmentBtn.UseVisualStyleBackColor = false;
             apoointmentBtn.Click += apoointmentBtn_Click;
             // 
@@ -173,6 +179,8 @@
             doctorBtn.FlatStyle = FlatStyle.Flat;
             doctorBtn.Font = new Font("Century Gothic", 14.25F);
             doctorBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            doctorBtn.Image = Properties.Resources.price;
+            doctorBtn.ImageAlign = ContentAlignment.MiddleLeft;
             doctorBtn.Location = new Point(12, 273);
             doctorBtn.Name = "doctorBtn";
             doctorBtn.Size = new Size(234, 45);
@@ -191,6 +199,8 @@
             patientBtn.FlatStyle = FlatStyle.Flat;
             patientBtn.Font = new Font("Century Gothic", 14.25F);
             patientBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            patientBtn.Image = Properties.Resources.client;
+            patientBtn.ImageAlign = ContentAlignment.MiddleLeft;
             patientBtn.Location = new Point(12, 201);
             patientBtn.Name = "patientBtn";
             patientBtn.Size = new Size(234, 45);

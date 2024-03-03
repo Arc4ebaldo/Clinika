@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cKDMhHZwGyZsQ0M1JdEOzI/bWOgv2SrrvMawrpch8VwjySaRQEOWW0zxCVRXEbzXddza9AGCl2Hpeo9lpO/L2Q==",
+  "dgSpecHash": "hgKTsSVjTLLbS3IFpYvBbSPSoovk8b4E1TcmZxvLgaYVoz19ItzN+bOQU5x/4lxFsq9cmii3HlJ6pObmHWVP/A==",
   "success": true,
-  "projectFilePath": "Z:\\Projects\\C#\\Clinika\\Clinica.csproj",
+  "projectFilePath": "z:\\Projects\\C#\\Clinika\\Clinica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xlamp\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.2\\microsoft.data.sqlite.core.8.0.2.nupkg.sha512",
     "C:\\Users\\xlamp\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.2\\microsoft.entityframeworkcore.8.0.2.nupkg.sha512",

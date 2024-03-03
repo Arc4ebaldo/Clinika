@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceForm));
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pictureBox4 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             BackBtn = new Button();
             FindBtn = new Button();
-            button3 = new Button();
+            AddBtn = new Button();
             EditBtn = new Button();
             SealBtn = new Button();
             DeleteBtn = new Button();
@@ -146,23 +146,24 @@
             FindBtn.Text = "ПОИСК";
             FindBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // AddBtn
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.LightSkyBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
-            button3.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 14.25F);
-            button3.ForeColor = Color.FromArgb(15, 15, 15);
-            button3.Location = new Point(883, 104);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 45);
-            button3.TabIndex = 56;
-            button3.Text = "ДОБАВИТЬ";
-            button3.UseVisualStyleBackColor = false;
+            AddBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddBtn.BackColor = Color.LightSkyBlue;
+            AddBtn.Cursor = Cursors.Hand;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
+            AddBtn.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
+            AddBtn.FlatStyle = FlatStyle.Flat;
+            AddBtn.Font = new Font("Century Gothic", 14.25F);
+            AddBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            AddBtn.Location = new Point(883, 104);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(150, 45);
+            AddBtn.TabIndex = 56;
+            AddBtn.Text = "ДОБАВИТЬ";
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
             // 
             // EditBtn
             // 
@@ -181,6 +182,7 @@
             EditBtn.TabIndex = 55;
             EditBtn.Text = "ИЗМЕНИТЬ";
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
             // SealBtn
             // 
@@ -199,6 +201,7 @@
             SealBtn.TabIndex = 54;
             SealBtn.Text = "ПЕЧАТЬ";
             SealBtn.UseVisualStyleBackColor = false;
+            SealBtn.Click += SealBtn_Click;
             // 
             // DeleteBtn
             // 
@@ -217,12 +220,13 @@
             DeleteBtn.TabIndex = 53;
             DeleteBtn.Text = "УДАЛИТЬ";
             DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(476, 9);
+            label3.Location = new Point(522, 9);
             label3.Name = "label3";
             label3.Size = new Size(113, 22);
             label3.TabIndex = 50;
@@ -232,7 +236,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(163, 9);
+            label2.Location = new Point(208, 9);
             label2.Name = "label2";
             label2.Size = new Size(110, 22);
             label2.TabIndex = 49;
@@ -245,7 +249,7 @@
             Cost.Cursor = Cursors.IBeam;
             Cost.Font = new Font("Century Gothic", 12F);
             Cost.ForeColor = Color.FromArgb(15, 15, 15);
-            Cost.Location = new Point(476, 51);
+            Cost.Location = new Point(522, 51);
             Cost.Mask = "00000руб.";
             Cost.Name = "Cost";
             Cost.Size = new Size(180, 27);
@@ -259,7 +263,7 @@
             Description.Cursor = Cursors.IBeam;
             Description.Font = new Font("Century Gothic", 12F);
             Description.ForeColor = Color.FromArgb(15, 15, 15);
-            Description.Location = new Point(163, 51);
+            Description.Location = new Point(208, 51);
             Description.Name = "Description";
             Description.Size = new Size(277, 27);
             Description.TabIndex = 1;
@@ -273,7 +277,7 @@
             Usluga_Name.ForeColor = Color.FromArgb(15, 15, 15);
             Usluga_Name.Location = new Point(12, 51);
             Usluga_Name.Name = "Usluga_Name";
-            Usluga_Name.Size = new Size(100, 27);
+            Usluga_Name.Size = new Size(162, 27);
             Usluga_Name.TabIndex = 0;
             // 
             // label1
@@ -288,45 +292,46 @@
             // 
             // AllService
             // 
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle17.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle17.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle17.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle17.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle17.SelectionForeColor = Color.SkyBlue;
-            AllService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.SkyBlue;
+            AllService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AllService.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllService.BackgroundColor = Color.LightSkyBlue;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle18.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle18.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle18.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle18.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle18.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
-            AllService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllService.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle19.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle19.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle19.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle19.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle19.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.False;
-            AllService.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllService.DefaultCellStyle = dataGridViewCellStyle3;
             AllService.GridColor = Color.LightBlue;
             AllService.Location = new Point(12, 104);
             AllService.Name = "AllService";
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle20.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle20.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle20.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle20.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle20.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
-            AllService.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllService.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllService.Size = new Size(853, 566);
             AllService.TabIndex = 42;
+            AllService.RowHeaderMouseClick += AllService_RowHeaderMouseClick;
             // 
             // ServiceForm
             // 
@@ -340,7 +345,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(BackBtn);
             Controls.Add(FindBtn);
-            Controls.Add(button3);
+            Controls.Add(AddBtn);
             Controls.Add(EditBtn);
             Controls.Add(SealBtn);
             Controls.Add(DeleteBtn);
@@ -373,7 +378,7 @@
         private PictureBox pictureBox2;
         private Button BackBtn;
         private Button FindBtn;
-        private Button button3;
+        private Button AddBtn;
         private Button EditBtn;
         private Button SealBtn;
         private Button DeleteBtn;

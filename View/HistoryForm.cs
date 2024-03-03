@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Clinica.DTO;
+using Clinica.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -18,9 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
+        private DiseaseService disease = new();
+        private string ID;
+
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-
+            AllHistory.DataSource = disease.GetAllHistorys();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -70,5 +76,87 @@ namespace Clinica.View
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+
+            DiseaseDTO newDisease = new DiseaseDTO(
+                Fio_Patient[0],
+                Fio_Patient[1],
+                startDay.Text,
+                stopDay.Text,
+                Diagnosis.Text,
+                Medicines.Text
+              );
+            diseaseService.CreateDisease(newDisease);
+            AllHistory.DataSource = disease.GetAllHistorys();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            diseaseService.DeleteHistoryById(int.Parse(ID));
+            AllHistory.DataSource = disease.GetAllHistorys();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+
+            DiseaseDTO newDisease = new DiseaseDTO(
+                Fio_Patient[0],
+                Fio_Patient[1],
+                startDay.Text,
+                stopDay.Text,
+                Diagnosis.Text,
+                Medicines.Text
+           );
+                diseaseService.UpdatePatient(newDisease);
+                AllHistory.DataSource = disease.GetAllHistorys();
+        }
+
+        private void AllHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+
+            DataGridViewSelectedCellCollection selectedCells = AllHistory.SelectedCells;
+            Fio_Patient[0] = selectedCells[0].Value.ToString();
+            Fio_Patient[1] = selectedCells[1].Value.ToString();
+            startDay.Text = selectedCells[2].Value.ToString();
+            stopDay.Text = selectedCells[3].Value.ToString();
+            Diagnosis.Text = selectedCells[4].Value.ToString();
+            Medicines.Text = selectedCells[5].Value.ToString();
+        }
+
+        private string result = "";
+
+        private void SealBtn_Click(object sender, EventArgs e)
+        {
+            result = "Строка 1\n\n";
+
+            result += "Строка 2\nСтрока 3";
+
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
+
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
     }
 }

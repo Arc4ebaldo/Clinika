@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Projects\\C#\\Clinika\\Clinica.csproj": {}
+    "z:\\Projects\\C#\\Clinika\\Clinica.csproj": {}
   },
   "projects": {
-    "Z:\\Projects\\C#\\Clinika\\Clinica.csproj": {
+    "z:\\Projects\\C#\\Clinika\\Clinica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Projects\\C#\\Clinika\\Clinica.csproj",
+        "projectUniqueName": "z:\\Projects\\C#\\Clinika\\Clinica.csproj",
         "projectName": "Clinica",
-        "projectPath": "Z:\\Projects\\C#\\Clinika\\Clinica.csproj",
+        "projectPath": "z:\\Projects\\C#\\Clinika\\Clinica.csproj",
         "packagesPath": "C:\\Users\\xlamp\\.nuget\\packages\\",
-        "outputPath": "Z:\\Projects\\C#\\Clinika\\obj\\",
+        "outputPath": "z:\\Projects\\C#\\Clinika\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xlamp\\AppData\\Roaming\\NuGet\\NuGet.Config"

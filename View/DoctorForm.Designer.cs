@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorForm));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pictureBox4 = new PictureBox();
             pictureBox1 = new PictureBox();
             Role = new ComboBox();
@@ -40,7 +40,7 @@
             pictureBox2 = new PictureBox();
             BackBtn = new Button();
             FindBtn = new Button();
-            button3 = new Button();
+            AddBtn = new Button();
             EditBtn = new Button();
             SealBtn = new Button();
             DeleteBtn = new Button();
@@ -48,7 +48,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            email = new TextBox();
+            Email = new TextBox();
             Number = new MaskedTextBox();
             Last_Name = new TextBox();
             First_Name = new TextBox();
@@ -98,7 +98,7 @@
             Role.Location = new Point(291, 49);
             Role.Name = "Role";
             Role.Size = new Size(160, 29);
-            Role.TabIndex = 25;
+            Role.TabIndex = 2;
             // 
             // pictureBox3
             // 
@@ -163,23 +163,24 @@
             FindBtn.Text = "ПОИСК";
             FindBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // AddBtn
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.LightSkyBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
-            button3.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 14.25F);
-            button3.ForeColor = Color.FromArgb(15, 15, 15);
-            button3.Location = new Point(882, 104);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 45);
-            button3.TabIndex = 35;
-            button3.Text = "ДОБАВИТЬ";
-            button3.UseVisualStyleBackColor = false;
+            AddBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddBtn.BackColor = Color.LightSkyBlue;
+            AddBtn.Cursor = Cursors.Hand;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatAppearance.MouseDownBackColor = Color.SkyBlue;
+            AddBtn.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
+            AddBtn.FlatStyle = FlatStyle.Flat;
+            AddBtn.Font = new Font("Century Gothic", 14.25F);
+            AddBtn.ForeColor = Color.FromArgb(15, 15, 15);
+            AddBtn.Location = new Point(882, 104);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(150, 45);
+            AddBtn.TabIndex = 35;
+            AddBtn.Text = "ДОБАВИТЬ";
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
             // 
             // EditBtn
             // 
@@ -198,6 +199,7 @@
             EditBtn.TabIndex = 34;
             EditBtn.Text = "ИЗМЕНИТЬ";
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
             // SealBtn
             // 
@@ -216,6 +218,7 @@
             SealBtn.TabIndex = 33;
             SealBtn.Text = "ПЕЧАТЬ";
             SealBtn.UseVisualStyleBackColor = false;
+            SealBtn.Click += SealBtn_Click;
             // 
             // DeleteBtn
             // 
@@ -234,6 +237,7 @@
             DeleteBtn.TabIndex = 32;
             DeleteBtn.Text = "УДАЛИТЬ";
             DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // label5
             // 
@@ -275,17 +279,17 @@
             label2.TabIndex = 28;
             label2.Text = "Фамилия";
             // 
-            // email
+            // Email
             // 
-            email.BackColor = Color.LightSkyBlue;
-            email.BorderStyle = BorderStyle.FixedSingle;
-            email.Cursor = Cursors.IBeam;
-            email.Font = new Font("Century Gothic", 12F);
-            email.ForeColor = Color.FromArgb(15, 15, 15);
-            email.Location = new Point(701, 51);
-            email.Name = "email";
-            email.Size = new Size(163, 27);
-            email.TabIndex = 27;
+            Email.BackColor = Color.LightSkyBlue;
+            Email.BorderStyle = BorderStyle.FixedSingle;
+            Email.Cursor = Cursors.IBeam;
+            Email.Font = new Font("Century Gothic", 12F);
+            Email.ForeColor = Color.FromArgb(15, 15, 15);
+            Email.Location = new Point(701, 51);
+            Email.Name = "Email";
+            Email.Size = new Size(163, 27);
+            Email.TabIndex = 4;
             // 
             // Number
             // 
@@ -298,7 +302,7 @@
             Number.Mask = "(999) 000-0000";
             Number.Name = "Number";
             Number.Size = new Size(180, 27);
-            Number.TabIndex = 26;
+            Number.TabIndex = 3;
             // 
             // Last_Name
             // 
@@ -310,7 +314,7 @@
             Last_Name.Location = new Point(152, 51);
             Last_Name.Name = "Last_Name";
             Last_Name.Size = new Size(100, 27);
-            Last_Name.TabIndex = 23;
+            Last_Name.TabIndex = 1;
             // 
             // First_Name
             // 
@@ -322,7 +326,7 @@
             First_Name.Location = new Point(11, 51);
             First_Name.Name = "First_Name";
             First_Name.Size = new Size(100, 27);
-            First_Name.TabIndex = 22;
+            First_Name.TabIndex = 0;
             // 
             // label1
             // 
@@ -336,45 +340,46 @@
             // 
             // AllDoctor
             // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle5.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = Color.SkyBlue;
-            AllDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.SkyBlue;
+            AllDoctor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AllDoctor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllDoctor.BackgroundColor = Color.LightSkyBlue;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle6.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            AllDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllDoctor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle7.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            AllDoctor.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllDoctor.DefaultCellStyle = dataGridViewCellStyle3;
             AllDoctor.GridColor = Color.LightBlue;
             AllDoctor.Location = new Point(11, 104);
             AllDoctor.Name = "AllDoctor";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle8.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            AllDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllDoctor.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllDoctor.Size = new Size(853, 566);
             AllDoctor.TabIndex = 21;
+            AllDoctor.RowHeaderMouseClick += AllDoctor_RowHeaderMouseClick;
             // 
             // DoctorForm
             // 
@@ -389,7 +394,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(BackBtn);
             Controls.Add(FindBtn);
-            Controls.Add(button3);
+            Controls.Add(AddBtn);
             Controls.Add(EditBtn);
             Controls.Add(SealBtn);
             Controls.Add(DeleteBtn);
@@ -397,7 +402,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(email);
+            Controls.Add(Email);
             Controls.Add(Number);
             Controls.Add(Last_Name);
             Controls.Add(First_Name);
@@ -426,7 +431,7 @@
         private PictureBox pictureBox2;
         private Button BackBtn;
         private Button FindBtn;
-        private Button button3;
+        private Button AddBtn;
         private Button EditBtn;
         private Button SealBtn;
         private Button DeleteBtn;
@@ -434,7 +439,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox email;
+        private TextBox Email;
         private MaskedTextBox Number;
         private TextBox Last_Name;
         private TextBox First_Name;
