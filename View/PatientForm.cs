@@ -26,7 +26,7 @@ namespace Clinica.View
 
         private void PatientForm_Load(object sender, EventArgs e)
         {
-            AllPatient.DataSource = patientService.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -88,18 +88,19 @@ namespace Clinica.View
                 null
              );
             patientService.CreatePatient(newPatient);
-            AllPatient.DataSource = patientService.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             patientService.DeletePatientById(int.Parse(ID));
-            AllPatient.DataSource = patientService.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
             PatientDTO newPatient = new PatientDTO(
+                ID,
                 First_Name.Text,
                 Last_Name.Text,
                 Birthday.Text,
@@ -108,7 +109,7 @@ namespace Clinica.View
                 null
              );
             patientService.UpdatePatient(newPatient);
-            AllPatient.DataSource = patientService.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients();
         }
 
         private void AllPatient_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

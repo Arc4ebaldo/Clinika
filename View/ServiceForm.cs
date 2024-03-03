@@ -97,6 +97,7 @@ namespace Clinica.View
         private void EditBtn_Click(object sender, EventArgs e)
         {
             ServiceDTO newService = new ServiceDTO(
+                ID,
                 Usluga_Name.Text,
                 Description.Text,
                 Cost.Text

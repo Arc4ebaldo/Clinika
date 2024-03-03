@@ -22,6 +22,6 @@ public class ApplicationContext : DbContext
         IConfiguration config = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
             .Build();
-        optionsBuilder.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+        optionsBuilder.UseSqlite(config.GetConnectionString("DefaultConnection"));
     }
 }

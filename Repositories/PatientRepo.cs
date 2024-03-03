@@ -43,6 +43,7 @@ public class PatienRepo
         patientToUpdate.Adress = updatedPatient.Adress;
         patientToUpdate.PhoneNumber = updatedPatient.PhoneNumber;
         patientToUpdate.Diseases = updatedPatient.Diseases;
+        context.SaveChanges();
     }
 
     public void DeleteById(int id)

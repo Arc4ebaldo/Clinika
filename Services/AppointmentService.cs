@@ -15,7 +15,22 @@ public class AppointmentService
 
     public void CreateAppointment(AppointmentDTO newAppointment)
     {
-        appointmentRepo.Create(ToAppointment(newAppointment));
+        using (var context = new ApplicationContext())
+        {
+            Patient patient = context.Patients
+                .Where(p => p.FirstName == newAppointment.PatientFirstName && p.LastName == newAppointment.PatientLastName)
+                .First();
+            Doctor doctor = context.Doctors.Where(d => d.FirstName == newAppointment.DoctorFirstName && d.LastName == newAppointment.DoctorLastName)
+                .First();
+            Appointment appointment = new Appointment(
+                DateTime.Parse(newAppointment.DataTime),
+                patient,
+                doctor,
+                newAppointment.Desctiprion
+            );
+            context.Appointments.Add(appointment);
+            context.SaveChanges();
+        }
     }
 
     public AppointmentDTO? GetAppointmentById(int id)
@@ -45,13 +60,22 @@ public class AppointmentService
 
     private Appointment ToAppointment(AppointmentDTO appointmentDTO)
     {
-        return new Appointment(
-            appointmentDTO.Id is null ? 0 : int.Parse(appointmentDTO.Id),
-            DateTime.Parse(appointmentDTO.DataTime),
-            null,
-            null,
-            appointmentDTO.Desctiprion
-        );
+        using (ApplicationContext context = new())
+        {
+            Patient patient = context.Patients
+                .Where(p => p.FirstName == appointmentDTO.PatientFirstName && p.LastName == appointmentDTO.PatientLastName)
+                .First();
+            Doctor doctor = context.Doctors
+                .Where(d => d.FirstName == appointmentDTO.DoctorFirstName && d.LastName == appointmentDTO.DoctorLastName)
+                .First();
+            return new Appointment(
+                appointmentDTO.Id is null ? 0 : int.Parse(appointmentDTO.Id),
+                DateTime.Parse(appointmentDTO.DataTime),
+                patient,
+                doctor,
+                appointmentDTO.Desctiprion
+            );
+        }
     }
 
     private AppointmentDTO? ToAppointmentDTO(Appointment appointment)

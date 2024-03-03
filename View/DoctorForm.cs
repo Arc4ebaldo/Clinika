@@ -27,6 +27,7 @@ namespace Clinica.View
         private void DoctorForm_Load(object sender, EventArgs e)
         {
             AllDoctor.DataSource = doctorService.GetAllDoctors();
+            Role.DataSource = new List<string>() { };
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace Clinica.View
         private void EditBtn_Click(object sender, EventArgs e)
         {
             DoctorDTO newDoctor = new DoctorDTO(
+                ID,
                 First_Name.Text,
                 Last_Name.Text,
                 Role.Text,
@@ -111,11 +113,12 @@ namespace Clinica.View
         private void AllDoctor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedCellCollection selectedCells = AllDoctor.SelectedCells;
-            First_Name.Text = selectedCells[0].Value.ToString();
-            Last_Name.Text = selectedCells[1].Value.ToString();
-            Role.Text = selectedCells[2].Value.ToString();
-            Number.Text = selectedCells[3].Value.ToString();
-            Email.Text = selectedCells[4].Value.ToString();
+            ID = selectedCells[0].Value.ToString();
+            First_Name.Text = selectedCells[1].Value.ToString();
+            Last_Name.Text = selectedCells[2].Value.ToString();
+            Role.Text = selectedCells[3].Value.ToString();
+            Number.Text = selectedCells[4].Value.ToString();
+            Email.Text = selectedCells[5].Value.ToString();
         }
 
         private string result = "";
