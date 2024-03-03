@@ -45,35 +45,4 @@ public class AppointmentDTO
     public string DoctorFirstName { get; set; }
     public string DoctorLastName { get; set; }
     public string? Desctiprion { get; set; }
-
-    public Appointment ToAppointment()
-    {
-        using (ApplicationContext context = new())
-        {
-            if (Id is null)
-            {
-                return new Appointment(
-                    DateTime.Parse(DataTime),
-                    context.Patients
-                        .Where(p => p.FirstName == PatientFirstName && p.LastName == PatientLastName)
-                        .First(),
-                    context.Doctors
-                        .Where(d => d.FirstName == DoctorFirstName && d.LastName == DoctorLastName)
-                        .First(),
-                    Desctiprion
-                );
-            }
-            return new Appointment(
-                int.Parse(Id),
-                DateTime.Parse(DataTime),
-                context.Patients
-                    .Where(p => p.FirstName == PatientFirstName && p.LastName == PatientLastName)
-                    .First(),
-                context.Doctors
-                    .Where(d => d.FirstName == DoctorFirstName && d.LastName == DoctorLastName)
-                    .First(),
-                Desctiprion
-            );
-        }
-    }
 }

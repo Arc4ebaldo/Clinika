@@ -24,9 +24,14 @@ public class DiseaseRepo
         return context.Diseases.Find(id);
     }
 
-    public IEnumerable<Disease>? GetAll()
+    public IEnumerable<Disease?> GetAll()
     {
         return context.Diseases.AsEnumerable();
+    }
+    
+    public IEnumerable<Disease?>? GetAllByPatientId(int id)
+    {
+        return context.Diseases.Where(d => d.PatientId == id).AsEnumerable();
     }
 
     public void Update(Disease updatedDisease)

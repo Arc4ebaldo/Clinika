@@ -23,7 +23,13 @@ public class PatienRepo
         return context.Patients.Find(id);
     }
 
-    public IEnumerable<Patient>? GetAll()
+    public Patient GetByFirstnameAndLastname(string firstName, string lastName)
+    {
+        return context.Patients
+            .Where(p => p.FirstName == firstName && p.LastName == lastName).First();
+    }
+
+    public IEnumerable<Patient?> GetAll()
     {
         return context.Patients.AsEnumerable();
     }

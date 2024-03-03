@@ -34,22 +34,4 @@ public class ServiceDTO
     public string Name { get; set; }
     public string Desctiprion { get; set; }
     public string Cost { get; set; }
-
-    public Service ToService()
-    {
-        if (Id is null)
-        {
-            return new Service(
-                Name,
-                Desctiprion,
-                int.Parse(Cost)
-            );
-        }
-        return new Service(
-                int.Parse(Id),
-                Name,
-                Desctiprion,
-                int.Parse(Cost)
-            );
-    }
 }

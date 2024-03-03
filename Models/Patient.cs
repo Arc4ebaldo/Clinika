@@ -14,7 +14,7 @@ public class Patient
         DateOnly birthDay,
         string adress,
         string phoneNumber,
-        ICollection<Disease>? diseases
+        IEnumerable<Disease?>? diseases
         )
     {
         FirstName = firstName;
@@ -32,7 +32,7 @@ public class Patient
         DateOnly birthDay,
         string adress,
         string phoneNumber,
-        ICollection<Disease>? diseases
+        IEnumerable<Disease?>? diseases
         ) : this(firstName, lastName, birthDay, adress, phoneNumber, diseases)
     {
         Id = id;
@@ -45,5 +45,5 @@ public class Patient
     public DateOnly BirthDay { get; set; }
     public string Adress { get; set; }
     public string PhoneNumber { get; set; }
-    public ICollection<Disease>? Diseases { get; set; }
+    public IEnumerable<Disease?>? Diseases { get; set; }
 }

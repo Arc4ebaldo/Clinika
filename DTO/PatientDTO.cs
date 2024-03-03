@@ -32,7 +32,7 @@ public class PatientDTO
             string birthDay,
             string adress,
             string phoneNumber,
-            ICollection<string>? diseases
+            ICollection<string?>? diseases
         ) : this(firstName, lastName, birthDay, adress, phoneNumber, diseases)
     {
         Id = id;
@@ -44,43 +44,5 @@ public class PatientDTO
     public string BirthDay { get; set; }
     public string Adress { get; set; }
     public string PhoneNumber { get; set; }
-    public ICollection<string>? Diseases { get; set; }
-
-    public Patient ToPatient()
-    {
-        if (Id is null)
-        {
-            return new Patient(
-                FirstName,
-                LastName,
-                DateOnly.Parse(BirthDay),
-                Adress,
-                PhoneNumber,
-                ToDiseases()
-            );
-        }
-        return new Patient(
-                int.Parse(Id),
-                FirstName,
-                LastName,
-                DateOnly.Parse(BirthDay),
-                Adress,
-                PhoneNumber,
-                ToDiseases()
-            );
-    }
-    private ICollection<Disease> ToDiseases()
-    {
-        using (ApplicationContext context = new())
-        {
-            ICollection<Disease> diseases = new List<Disease>();
-            foreach (var dis in Diseases)
-            {
-                Disease disease = context.Diseases
-                    .Where(d => d.Desctiprion == dis).First();
-                diseases.Add(disease);
-            }
-            return diseases;
-        }
-    }
+    public ICollection<string?>? Diseases { get; set; }
 }

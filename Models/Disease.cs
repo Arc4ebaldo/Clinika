@@ -35,5 +35,4 @@ public class Disease
     public DateOnly Start { get; set; }
     public DateOnly? Stop { get; set; }
     public string? Desctiprion { get; set; }
-
 }
