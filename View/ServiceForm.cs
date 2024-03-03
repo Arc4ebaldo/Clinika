@@ -21,12 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
-        private ServiceService service = new();
+        private ServiceService serviceService = new();
         private string ID;
 
         private void ServiceForm_Load(object sender, EventArgs e)
         {
-            AllService.DataSource = service.GetAllServices();
+            AllService.DataSource = serviceService.GetAllServices();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -85,13 +85,13 @@ namespace Clinica.View
                 Cost.Text
              );
             serviceService.CreateService(newService);
-            AllService.DataSource = service.GetAllServices();
+            AllService.DataSource = serviceService.GetAllServices();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             serviceService.DeleteServiceById(int.Parse(ID));
-            AllService.DataSource = service.GetAllServices();
+            AllService.DataSource = serviceService.GetAllServices();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -102,15 +102,16 @@ namespace Clinica.View
                 Cost.Text
              );
             serviceService.UpdateService(newService);
-            AllService.DataSource = service.GetAllServices();
+            AllService.DataSource = serviceService.GetAllServices();
         }
 
         private void AllService_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedCellCollection selectedCells = AllService.SelectedCells;
-            Usluga_Name.Text = selectedCells[0].Value.ToString();
-            Description.Text = selectedCells[1].Value.ToString();
-            Cost.Text = selectedCells[2].Value.ToString();
+            ID = selectedCells[0].Value.ToString();
+            Usluga_Name.Text = selectedCells[1].Value.ToString();
+            Description.Text = selectedCells[2].Value.ToString();
+            Cost.Text = selectedCells[3].Value.ToString();
         }
 
         private string result = "";

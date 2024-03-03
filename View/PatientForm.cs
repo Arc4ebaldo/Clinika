@@ -21,12 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
-        private PatientService patient = new();
+        private PatientService patientService = new();
         private string ID;
 
         private void PatientForm_Load(object sender, EventArgs e)
         {
-            AllPatient.DataSource = patient.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -85,16 +85,16 @@ namespace Clinica.View
                 Birthday.Text,
                 Number.Text,
                 Email.Text,
-                Diagnos.Text
+                null
              );
             patientService.CreatePatient(newPatient);
-            AllPatient.DataSource = patient.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             patientService.DeletePatientById(int.Parse(ID));
-            AllPatient.DataSource = patient.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients;
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -105,21 +105,22 @@ namespace Clinica.View
                 Birthday.Text,
                 Number.Text,
                 Email.Text,
-                Diagnos.Text
+                null
              );
             patientService.UpdatePatient(newPatient);
-            AllPatient.DataSource = patient.GetAllPatients;
+            AllPatient.DataSource = patientService.GetAllPatients;
         }
 
         private void AllPatient_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedCellCollection selectedCells = AllPatient.SelectedCells;
-            First_Name.Text = selectedCells[0].Value.ToString();
-            Last_Name.Text = (selectedCells[1].Value.ToString());
-            Birthday.Text = selectedCells[2].Value.ToString();
-            Number.Text = selectedCells[3].Value.ToString();
-            Email.Text = selectedCells[4].Value.ToString();
-            Diagnos.Text = selectedCells[5].Value.ToString();
+            ID = selectedCells[0].Value.ToString();
+            First_Name.Text = selectedCells[1].Value.ToString();
+            Last_Name.Text = (selectedCells[2].Value.ToString());
+            Birthday.Text = selectedCells[3].Value.ToString();
+            Number.Text = selectedCells[4].Value.ToString();
+            Email.Text = selectedCells[5].Value.ToString();
+            Diagnos.Text = selectedCells[6].Value.ToString();
         }
 
         private string result = "";

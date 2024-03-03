@@ -21,12 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
-        private DiseaseService disease = new();
+        private DiseaseService diseaseService = new();
         private string ID;
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            AllHistory.DataSource = disease.GetAllHistorys();
+            AllHistory.DataSource = diseaseService.GetAllDiseases();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -90,13 +90,13 @@ namespace Clinica.View
                 Medicines.Text
               );
             diseaseService.CreateDisease(newDisease);
-            AllHistory.DataSource = disease.GetAllHistorys();
+            AllHistory.DataSource = diseaseService.GetAllDiseases();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            diseaseService.DeleteHistoryById(int.Parse(ID));
-            AllHistory.DataSource = disease.GetAllHistorys();
+            diseaseService.DeleteDiseaseById(int.Parse(ID));
+            AllHistory.DataSource = diseaseService.GetAllDiseases();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -111,8 +111,8 @@ namespace Clinica.View
                 Diagnosis.Text,
                 Medicines.Text
            );
-                diseaseService.UpdatePatient(newDisease);
-                AllHistory.DataSource = disease.GetAllHistorys();
+                diseaseService.UpdateDisease(newDisease);
+                AllHistory.DataSource = diseaseService.GetAllDiseases();
         }
 
         private void AllHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

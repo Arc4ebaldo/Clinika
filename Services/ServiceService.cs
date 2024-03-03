@@ -51,7 +51,7 @@ public class ServiceService
     private Service ToService(ServiceDTO serviceDTO)
     {
         return new Service(
-            int.Parse(serviceDTO.Id),
+            serviceDTO.Id is null ? 0:int.Parse(serviceDTO.Id),
             serviceDTO.Name,
             serviceDTO.Desctiprion,
             int.Parse(serviceDTO.Cost)

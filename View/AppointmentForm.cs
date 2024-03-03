@@ -23,12 +23,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
-        private AppointmentService appointment = new();
+        private AppointmentService appointmentService = new();
         private string ID;
 
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
-            AllAppointment.DataSource = appointment.GetAllAppointments();
+            AllAppointment.DataSource = appointmentService.GetAllAppointment();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -95,14 +95,14 @@ namespace Clinica.View
                     Problem.Text
                 );
             appointmentService.CreateAppointment(newAppoint);
-            AllAppointment.DataSource = appointmentService.GetAllAppointments();
+            AllAppointment.DataSource = appointmentService.GetAllAppointment();
 
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             appointmentService.DeleteAppointmentById(int.Parse(ID));
-            AllAppointment.DataSource = appointmentService.GetAllAppointments();
+            AllAppointment.DataSource = appointmentService.GetAllAppointment();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -118,8 +118,8 @@ namespace Clinica.View
                 Fio_Doctor[1],
                 Problem.Text
              );
-                appointmentService.UpdatePatient(newAppoint);
-                AllAppointment.DataSource = appointmentService.GetAllAppointments();
+                appointmentService.UpdateAppointment(newAppoint);
+                AllAppointment.DataSource = appointmentService.GetAllAppointment();
         }
 
         private void AllAppointment_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

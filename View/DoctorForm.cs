@@ -21,12 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
-        private DoctorService doctor = new();
+        private DoctorService doctorService = new();
         private string ID;
 
         private void DoctorForm_Load(object sender, EventArgs e)
         {
-            AllDoctor.DataSource = doctor.GetAllDoctors();
+            AllDoctor.DataSource = doctorService.GetAllDoctors();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -86,13 +86,13 @@ namespace Clinica.View
                 Email.Text
                 );
             doctorService.CreateDoctor(newDoctor);
-            AllDoctor.DataSource = doctor.GetAllDoctors();
+            AllDoctor.DataSource = doctorService.GetAllDoctors();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             doctorService.DeleteDoctorById(int.Parse(ID));
-            AllDoctor.DataSource = doctor.GetAllDoctors();
+            AllDoctor.DataSource = doctorService.GetAllDoctors();
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -104,8 +104,8 @@ namespace Clinica.View
                 Number.Text,
                 Email.Text
              );
-                doctorService.UpdatePatient(newDoctor);
-                AllDoctor.DataSource = doctor.GetAllDoctors();
+                doctorService.UpdateDoctor(newDoctor);
+                AllDoctor.DataSource = doctorService.GetAllDoctors();
         }
 
         private void AllDoctor_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

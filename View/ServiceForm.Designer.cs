@@ -250,7 +250,7 @@
             Cost.Font = new Font("Century Gothic", 12F);
             Cost.ForeColor = Color.FromArgb(15, 15, 15);
             Cost.Location = new Point(522, 51);
-            Cost.Mask = "00000руб.";
+            Cost.Mask = "00000";
             Cost.Name = "Cost";
             Cost.Size = new Size(180, 27);
             Cost.TabIndex = 2;
