@@ -131,10 +131,9 @@ namespace Clinica.View
             DataGridViewSelectedCellCollection selectedCells = AllAppointment.SelectedCells;
             ID = selectedCells[0].Value.ToString();
             DataTime.Text = selectedCells[1].Value.ToString();
-            Fio_Patient[0] = selectedCells[2].Value.ToString();
-            Fio_Patient[1] = selectedCells[3].Value.ToString();
-            Fio_Doctor[0] = selectedCells[4].Value.ToString();
-            Problem.Text = selectedCells[5].Value.ToString();
+            ID_Patient.Text = selectedCells[2].Value.ToString() + " " + selectedCells[3].Value.ToString();
+            ID_Doctor.Text = selectedCells[4].Value.ToString() + " " + selectedCells[5].Value.ToString();
+            Problem.Text = selectedCells[6].Value.ToString();
         }
 
         private string result = "";

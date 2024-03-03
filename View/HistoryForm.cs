@@ -79,15 +79,14 @@ namespace Clinica.View
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
 
             DiseaseDTO newDisease = new DiseaseDTO(
                 Fio_Patient[0],
                 Fio_Patient[1],
                 startDay.Text,
                 stopDay.Text,
-                Diagnosis.Text,
-                Medicines.Text
+                Diagnosis.Text
               );
             diseaseService.CreateDisease(newDisease);
             AllHistory.DataSource = diseaseService.GetAllDiseases();
@@ -101,15 +100,15 @@ namespace Clinica.View
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
 
             DiseaseDTO newDisease = new DiseaseDTO(
+                ID,
                 Fio_Patient[0],
                 Fio_Patient[1],
                 startDay.Text,
                 stopDay.Text,
-                Diagnosis.Text,
-                Medicines.Text
+                Diagnosis.Text
            );
                 diseaseService.UpdateDisease(newDisease);
                 AllHistory.DataSource = diseaseService.GetAllDiseases();
@@ -117,15 +116,14 @@ namespace Clinica.View
 
         private void AllHistory_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string[] Fio_Patient = ID_Patient.Text.Split(' ');
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
 
             DataGridViewSelectedCellCollection selectedCells = AllHistory.SelectedCells;
-            Fio_Patient[0] = selectedCells[0].Value.ToString();
-            Fio_Patient[1] = selectedCells[1].Value.ToString();
-            startDay.Text = selectedCells[2].Value.ToString();
-            stopDay.Text = selectedCells[3].Value.ToString();
-            Diagnosis.Text = selectedCells[4].Value.ToString();
-            Medicines.Text = selectedCells[5].Value.ToString();
+            ID = selectedCells[0].Value.ToString();
+            ID_Patient.Text = selectedCells[1].Value.ToString() + " " + selectedCells[2].Value.ToString();
+            startDay.Text = selectedCells[3].Value.ToString();
+            stopDay.Text = selectedCells[4].Value.ToString();
+            Diagnosis.Text = selectedCells[5].Value.ToString();
         }
 
         private string result = "";

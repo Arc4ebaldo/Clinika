@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pictureBox4 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -46,7 +46,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            ID_Patient = new MaskedTextBox();
             Diagnosis = new TextBox();
             Medicines = new TextBox();
             label1 = new Label();
@@ -54,6 +53,7 @@
             startDay = new MaskedTextBox();
             label5 = new Label();
             stopDay = new MaskedTextBox();
+            ID_Patient = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -256,20 +256,6 @@
             label2.TabIndex = 49;
             label2.Text = "Дата начало лечения";
             // 
-            // ID_Patient
-            // 
-            ID_Patient.BackColor = Color.LightSkyBlue;
-            ID_Patient.BorderStyle = BorderStyle.FixedSingle;
-            ID_Patient.Cursor = Cursors.IBeam;
-            ID_Patient.Font = new Font("Century Gothic", 12F);
-            ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
-            ID_Patient.Location = new Point(12, 51);
-            ID_Patient.Mask = "00000";
-            ID_Patient.Name = "ID_Patient";
-            ID_Patient.Size = new Size(152, 27);
-            ID_Patient.TabIndex = 0;
-            ID_Patient.ValidatingType = typeof(int);
-            // 
             // Diagnosis
             // 
             Diagnosis.BackColor = Color.LightSkyBlue;
@@ -306,43 +292,43 @@
             // 
             // AllHistory
             // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle5.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = Color.SkyBlue;
-            AllHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.SkyBlue;
+            AllHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             AllHistory.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllHistory.BackgroundColor = Color.LightSkyBlue;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle6.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            AllHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            AllHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle7.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            AllHistory.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllHistory.DefaultCellStyle = dataGridViewCellStyle3;
             AllHistory.GridColor = Color.LightBlue;
             AllHistory.Location = new Point(12, 104);
             AllHistory.Name = "AllHistory";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle8.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            AllHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle4.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            AllHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             AllHistory.Size = new Size(853, 566);
             AllHistory.TabIndex = 42;
             AllHistory.RowHeaderMouseClick += AllHistory_RowHeaderMouseClick;
@@ -385,12 +371,25 @@
             stopDay.TabIndex = 64;
             stopDay.ValidatingType = typeof(DateTime);
             // 
+            // ID_Patient
+            // 
+            ID_Patient.BackColor = Color.LightSkyBlue;
+            ID_Patient.BorderStyle = BorderStyle.FixedSingle;
+            ID_Patient.Cursor = Cursors.IBeam;
+            ID_Patient.Font = new Font("Century Gothic", 12F);
+            ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
+            ID_Patient.Location = new Point(12, 51);
+            ID_Patient.Name = "ID_Patient";
+            ID_Patient.Size = new Size(131, 27);
+            ID_Patient.TabIndex = 65;
+            // 
             // HistoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 93, 142);
             ClientSize = new Size(1045, 682);
+            Controls.Add(ID_Patient);
             Controls.Add(stopDay);
             Controls.Add(label5);
             Controls.Add(startDay);
@@ -407,7 +406,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(ID_Patient);
             Controls.Add(Diagnosis);
             Controls.Add(Medicines);
             Controls.Add(label1);
@@ -441,7 +439,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private MaskedTextBox ID_Patient;
         private TextBox Diagnosis;
         private TextBox Medicines;
         private Label label1;
@@ -449,5 +446,6 @@
         private MaskedTextBox startDay;
         private Label label5;
         private MaskedTextBox stopDay;
+        private TextBox ID_Patient;
     }
 }
