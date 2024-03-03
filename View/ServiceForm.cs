@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Clinica.DTO;
+using Clinica.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -18,9 +21,12 @@ namespace Clinica.View
             InitializeComponent();
         }
 
+        private ServiceService service = new();
+        private string ID;
+
         private void ServiceForm_Load(object sender, EventArgs e)
         {
-
+            AllService.DataSource = service.GetAllServices();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -70,5 +76,72 @@ namespace Clinica.View
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            ServiceDTO newService = new ServiceDTO(
+                Usluga_Name.Text,
+                Description.Text,
+                Cost.Text
+             );
+            serviceService.CreateService(newService);
+            AllService.DataSource = service.GetAllServices();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            serviceService.DeleteServiceById(int.Parse(ID));
+            AllService.DataSource = service.GetAllServices();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            ServiceDTO newService = new ServiceDTO(
+                Usluga_Name.Text,
+                Description.Text,
+                Cost.Text
+             );
+            serviceService.UpdateService(newService);
+            AllService.DataSource = service.GetAllServices();
+        }
+
+        private void AllService_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedCellCollection selectedCells = AllService.SelectedCells;
+            Usluga_Name.Text = selectedCells[0].Value.ToString();
+            Description.Text = selectedCells[1].Value.ToString();
+            Cost.Text = selectedCells[2].Value.ToString();
+        }
+
+        private string result = "";
+
+        private void SealBtn_Click(object sender, EventArgs e)
+        {
+            result = "Строка 1\n\n";
+
+            result += "Строка 2\nСтрока 3";
+
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
+
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
     }
 }
