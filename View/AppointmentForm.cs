@@ -168,18 +168,14 @@ namespace Clinica.View
 
         private void FindBtn_Click(object sender, EventArgs e)
         {
+            List<AppointmentDTO?> appointmentList = appointmentService.GetAllAppointment();
             string[] Fio_Patient = ID_Patient.Text.Split(" ");
-            if (AllAppointment.DataSource is List<Doctor> doctorsList)
+            foreach (var i in appointmentList)
             {
-                foreach (var i in doctorsList)
+                if (i.PatientFirstName == Fio_Patient[0] && i.PatientLastName == Fio_Patient[1])
                 {
-                    if (i.FirstName == Fio_Patient[0] && i.LastName == Fio_Patient[1])
-                    {
-                        AllAppointment.DataSource = new List<Doctor>() { i };
-                        return;
-                    }
-
-                  
+                    AllAppointment.DataSource = new List<AppointmentDTO>() { i };
+                    return;
                 }
             }
         }
