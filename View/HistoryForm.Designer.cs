@@ -48,16 +48,16 @@
             Diagnosis = new TextBox();
             label1 = new Label();
             AllHistory = new DataGridView();
-            startDay = new MaskedTextBox();
-            label5 = new Label();
-            stopDay = new MaskedTextBox();
-            ID_Patient = new TextBox();
             IDPole = new DataGridViewTextBoxColumn();
             PatientNamePole = new DataGridViewTextBoxColumn();
             PatientLastNamePole = new DataGridViewTextBoxColumn();
             DataStartPole = new DataGridViewTextBoxColumn();
             DataEndPole = new DataGridViewTextBoxColumn();
             DiagnosePole = new DataGridViewTextBoxColumn();
+            startDay = new MaskedTextBox();
+            label5 = new Label();
+            stopDay = new MaskedTextBox();
+            ID_Patient = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -260,7 +260,7 @@
             Diagnosis.Location = new Point(545, 51);
             Diagnosis.Name = "Diagnosis";
             Diagnosis.Size = new Size(131, 27);
-            Diagnosis.TabIndex = 2;
+            Diagnosis.TabIndex = 3;
             // 
             // label1
             // 
@@ -316,56 +316,6 @@
             AllHistory.TabIndex = 42;
             AllHistory.RowHeaderMouseClick += AllHistory_RowHeaderMouseClick;
             // 
-            // startDay
-            // 
-            startDay.BackColor = Color.LightSkyBlue;
-            startDay.BorderStyle = BorderStyle.FixedSingle;
-            startDay.Cursor = Cursors.IBeam;
-            startDay.Font = new Font("Century Gothic", 12F);
-            startDay.ForeColor = Color.FromArgb(15, 15, 15);
-            startDay.Location = new Point(185, 51);
-            startDay.Mask = "00/00/0000";
-            startDay.Name = "startDay";
-            startDay.Size = new Size(147, 27);
-            startDay.TabIndex = 1;
-            startDay.ValidatingType = typeof(DateTime);
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label5.Location = new Point(400, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(120, 22);
-            label5.TabIndex = 63;
-            label5.Text = "Дата конца";
-            // 
-            // stopDay
-            // 
-            stopDay.BackColor = Color.LightSkyBlue;
-            stopDay.BorderStyle = BorderStyle.FixedSingle;
-            stopDay.Cursor = Cursors.IBeam;
-            stopDay.Font = new Font("Century Gothic", 12F);
-            stopDay.ForeColor = Color.FromArgb(15, 15, 15);
-            stopDay.Location = new Point(388, 51);
-            stopDay.Mask = "00/00/0000";
-            stopDay.Name = "stopDay";
-            stopDay.Size = new Size(132, 27);
-            stopDay.TabIndex = 64;
-            stopDay.ValidatingType = typeof(DateTime);
-            // 
-            // ID_Patient
-            // 
-            ID_Patient.BackColor = Color.LightSkyBlue;
-            ID_Patient.BorderStyle = BorderStyle.FixedSingle;
-            ID_Patient.Cursor = Cursors.IBeam;
-            ID_Patient.Font = new Font("Century Gothic", 12F);
-            ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
-            ID_Patient.Location = new Point(12, 51);
-            ID_Patient.Name = "ID_Patient";
-            ID_Patient.Size = new Size(131, 27);
-            ID_Patient.TabIndex = 65;
-            // 
             // IDPole
             // 
             IDPole.HeaderText = "ID";
@@ -404,6 +354,56 @@
             DiagnosePole.HeaderText = "Диагноз";
             DiagnosePole.Name = "DiagnosePole";
             DiagnosePole.ReadOnly = true;
+            // 
+            // startDay
+            // 
+            startDay.BackColor = Color.LightSkyBlue;
+            startDay.BorderStyle = BorderStyle.FixedSingle;
+            startDay.Cursor = Cursors.IBeam;
+            startDay.Font = new Font("Century Gothic", 12F);
+            startDay.ForeColor = Color.FromArgb(15, 15, 15);
+            startDay.Location = new Point(185, 51);
+            startDay.Mask = "00/00/0000";
+            startDay.Name = "startDay";
+            startDay.Size = new Size(147, 27);
+            startDay.TabIndex = 1;
+            startDay.ValidatingType = typeof(DateTime);
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label5.Location = new Point(400, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(120, 22);
+            label5.TabIndex = 63;
+            label5.Text = "Дата конца";
+            // 
+            // stopDay
+            // 
+            stopDay.BackColor = Color.LightSkyBlue;
+            stopDay.BorderStyle = BorderStyle.FixedSingle;
+            stopDay.Cursor = Cursors.IBeam;
+            stopDay.Font = new Font("Century Gothic", 12F);
+            stopDay.ForeColor = Color.FromArgb(15, 15, 15);
+            stopDay.Location = new Point(388, 51);
+            stopDay.Mask = "00/00/0000";
+            stopDay.Name = "stopDay";
+            stopDay.Size = new Size(132, 27);
+            stopDay.TabIndex = 2;
+            stopDay.ValidatingType = typeof(DateTime);
+            // 
+            // ID_Patient
+            // 
+            ID_Patient.BackColor = Color.LightSkyBlue;
+            ID_Patient.BorderStyle = BorderStyle.FixedSingle;
+            ID_Patient.Cursor = Cursors.IBeam;
+            ID_Patient.Font = new Font("Century Gothic", 12F);
+            ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
+            ID_Patient.Location = new Point(12, 51);
+            ID_Patient.Name = "ID_Patient";
+            ID_Patient.Size = new Size(131, 27);
+            ID_Patient.TabIndex = 0;
             // 
             // HistoryForm
             // 
