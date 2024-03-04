@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             pictureBox4 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -50,6 +50,10 @@
             Usluga_Name = new TextBox();
             label1 = new Label();
             AllService = new DataGridView();
+            IDPole = new DataGridViewTextBoxColumn();
+            NamePole = new DataGridViewTextBoxColumn();
+            DescriptionPole = new DataGridViewTextBoxColumn();
+            PricePole = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -145,6 +149,7 @@
             FindBtn.TabIndex = 57;
             FindBtn.Text = "ПОИСК";
             FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
             // 
             // AddBtn
             // 
@@ -292,46 +297,75 @@
             // 
             // AllService
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = Color.SkyBlue;
-            AllService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle5.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = Color.SkyBlue;
+            AllService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             AllService.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             AllService.BackgroundColor = Color.LightSkyBlue;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            AllService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle6.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            AllService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             AllService.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            AllService.DefaultCellStyle = dataGridViewCellStyle3;
+            AllService.Columns.AddRange(new DataGridViewColumn[] { IDPole, NamePole, DescriptionPole, PricePole });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle7.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle7.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            AllService.DefaultCellStyle = dataGridViewCellStyle7;
             AllService.GridColor = Color.LightBlue;
-            AllService.Location = new Point(12, 104);
+            AllService.Location = new Point(2, 104);
             AllService.Name = "AllService";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(15, 15, 15);
-            dataGridViewCellStyle4.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.SkyBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            AllService.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle8.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(15, 15, 15);
+            dataGridViewCellStyle8.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = Color.SkyBlue;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            AllService.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             AllService.Size = new Size(853, 566);
             AllService.TabIndex = 42;
             AllService.RowHeaderMouseClick += AllService_RowHeaderMouseClick;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // NamePole
+            // 
+            NamePole.HeaderText = "Название";
+            NamePole.Name = "NamePole";
+            NamePole.ReadOnly = true;
+            NamePole.Width = 150;
+            // 
+            // DescriptionPole
+            // 
+            DescriptionPole.HeaderText = "Описание";
+            DescriptionPole.Name = "DescriptionPole";
+            DescriptionPole.ReadOnly = true;
+            DescriptionPole.Width = 250;
+            // 
+            // PricePole
+            // 
+            PricePole.HeaderText = "Стоимость";
+            PricePole.Name = "PricePole";
+            PricePole.ReadOnly = true;
+            PricePole.Width = 150;
             // 
             // ServiceForm
             // 
@@ -389,5 +423,9 @@
         private TextBox Usluga_Name;
         private Label label1;
         private DataGridView AllService;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn NamePole;
+        private DataGridViewTextBoxColumn DescriptionPole;
+        private DataGridViewTextBoxColumn PricePole;
     }
 }

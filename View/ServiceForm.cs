@@ -145,5 +145,9 @@ namespace Clinica.View
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
 
+        private void FindBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

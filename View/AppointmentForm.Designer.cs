@@ -52,6 +52,13 @@
             DataTime = new MaskedTextBox();
             ID_Doctor = new TextBox();
             Problem = new TextBox();
+            IDPole = new DataGridViewTextBoxColumn();
+            DataPole = new DataGridViewTextBoxColumn();
+            PatientNamePole = new DataGridViewTextBoxColumn();
+            PatientLastNamePole = new DataGridViewTextBoxColumn();
+            DoctorNamePole = new DataGridViewTextBoxColumn();
+            DoctorLastNamePole = new DataGridViewTextBoxColumn();
+            ProblemPole = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -229,7 +236,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(577, 9);
+            label4.Location = new Point(617, 9);
             label4.Name = "label4";
             label4.Size = new Size(216, 22);
             label4.TabIndex = 51;
@@ -239,11 +246,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(419, 9);
+            label3.Location = new Point(445, 9);
             label3.Name = "label3";
-            label3.Size = new Size(122, 22);
+            label3.Size = new Size(148, 22);
             label3.TabIndex = 50;
-            label3.Text = "ФИО Врача";
+            label3.Text = "Данные Врача";
             // 
             // label2
             // 
@@ -251,9 +258,9 @@
             label2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label2.Location = new Point(257, 9);
             label2.Name = "label2";
-            label2.Size = new Size(156, 22);
+            label2.Size = new Size(182, 22);
             label2.TabIndex = 49;
-            label2.Text = "ФИО Пациента";
+            label2.Text = "Данные Пациента";
             // 
             // ID_Patient
             // 
@@ -264,7 +271,7 @@
             ID_Patient.ForeColor = Color.FromArgb(15, 15, 15);
             ID_Patient.Location = new Point(257, 51);
             ID_Patient.Name = "ID_Patient";
-            ID_Patient.Size = new Size(127, 27);
+            ID_Patient.Size = new Size(162, 27);
             ID_Patient.TabIndex = 1;
             // 
             // label1
@@ -297,6 +304,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllAppointment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllAppointment.Columns.AddRange(new DataGridViewColumn[] { IDPole, DataPole, PatientNamePole, PatientLastNamePole, DoctorNamePole, DoctorLastNamePole, ProblemPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -341,7 +349,7 @@
             ID_Doctor.Cursor = Cursors.IBeam;
             ID_Doctor.Font = new Font("Century Gothic", 12F);
             ID_Doctor.ForeColor = Color.FromArgb(15, 15, 15);
-            ID_Doctor.Location = new Point(419, 51);
+            ID_Doctor.Location = new Point(445, 51);
             ID_Doctor.Name = "ID_Doctor";
             ID_Doctor.Size = new Size(127, 27);
             ID_Doctor.TabIndex = 2;
@@ -353,11 +361,56 @@
             Problem.Cursor = Cursors.IBeam;
             Problem.Font = new Font("Century Gothic", 12F);
             Problem.ForeColor = Color.FromArgb(15, 15, 15);
-            Problem.Location = new Point(577, 51);
+            Problem.Location = new Point(617, 51);
             Problem.Name = "Problem";
             Problem.Size = new Size(216, 27);
             Problem.TabIndex = 3;
             Problem.Text = " ";
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // DataPole
+            // 
+            DataPole.HeaderText = "Дата и время приема";
+            DataPole.Name = "DataPole";
+            DataPole.ReadOnly = true;
+            DataPole.Width = 150;
+            // 
+            // PatientNamePole
+            // 
+            PatientNamePole.HeaderText = "Имя пациента";
+            PatientNamePole.Name = "PatientNamePole";
+            PatientNamePole.ReadOnly = true;
+            // 
+            // PatientLastNamePole
+            // 
+            PatientLastNamePole.HeaderText = "Фамилия пациента";
+            PatientLastNamePole.Name = "PatientLastNamePole";
+            PatientLastNamePole.ReadOnly = true;
+            // 
+            // DoctorNamePole
+            // 
+            DoctorNamePole.HeaderText = "Имя врача";
+            DoctorNamePole.Name = "DoctorNamePole";
+            DoctorNamePole.ReadOnly = true;
+            // 
+            // DoctorLastNamePole
+            // 
+            DoctorLastNamePole.HeaderText = "Фамлия врача";
+            DoctorLastNamePole.Name = "DoctorLastNamePole";
+            DoctorLastNamePole.ReadOnly = true;
+            // 
+            // ProblemPole
+            // 
+            ProblemPole.HeaderText = "Описание проблемы";
+            ProblemPole.Name = "ProblemPole";
+            ProblemPole.ReadOnly = true;
+            ProblemPole.Width = 250;
             // 
             // AppointmentForm
             // 
@@ -419,5 +472,12 @@
         private MaskedTextBox DataTime;
         private TextBox ID_Doctor;
         private TextBox Problem;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn DataPole;
+        private DataGridViewTextBoxColumn PatientNamePole;
+        private DataGridViewTextBoxColumn PatientLastNamePole;
+        private DataGridViewTextBoxColumn DoctorNamePole;
+        private DataGridViewTextBoxColumn DoctorLastNamePole;
+        private DataGridViewTextBoxColumn ProblemPole;
     }
 }

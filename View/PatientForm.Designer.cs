@@ -54,6 +54,12 @@
             pictureBox1 = new PictureBox();
             pictureBox4 = new PictureBox();
             Birthday = new MaskedTextBox();
+            IDPole = new DataGridViewTextBoxColumn();
+            NamePole = new DataGridViewTextBoxColumn();
+            LastNamePole = new DataGridViewTextBoxColumn();
+            BirthdayPole = new DataGridViewTextBoxColumn();
+            NumberPole = new DataGridViewTextBoxColumn();
+            EmailPole = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)AllPatient).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -81,6 +87,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllPatient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllPatient.Columns.AddRange(new DataGridViewColumn[] { IDPole, NamePole, LastNamePole, BirthdayPole, NumberPole, EmailPole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -382,6 +389,45 @@
             Birthday.TabIndex = 2;
             Birthday.ValidatingType = typeof(DateTime);
             // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // NamePole
+            // 
+            NamePole.HeaderText = "Имя";
+            NamePole.Name = "NamePole";
+            NamePole.ReadOnly = true;
+            // 
+            // LastNamePole
+            // 
+            LastNamePole.HeaderText = "Фамилия";
+            LastNamePole.Name = "LastNamePole";
+            LastNamePole.ReadOnly = true;
+            // 
+            // BirthdayPole
+            // 
+            BirthdayPole.HeaderText = "Дата рождения";
+            BirthdayPole.Name = "BirthdayPole";
+            BirthdayPole.ReadOnly = true;
+            // 
+            // NumberPole
+            // 
+            NumberPole.HeaderText = "Номер телефона";
+            NumberPole.Name = "NumberPole";
+            NumberPole.ReadOnly = true;
+            NumberPole.Width = 150;
+            // 
+            // EmailPole
+            // 
+            EmailPole.HeaderText = "Адрес эл. почты";
+            EmailPole.Name = "EmailPole";
+            EmailPole.ReadOnly = true;
+            EmailPole.Width = 150;
+            // 
             // PatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -447,5 +493,11 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;
         private MaskedTextBox Birthday;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn NamePole;
+        private DataGridViewTextBoxColumn LastNamePole;
+        private DataGridViewTextBoxColumn BirthdayPole;
+        private DataGridViewTextBoxColumn NumberPole;
+        private DataGridViewTextBoxColumn EmailPole;
     }
 }
