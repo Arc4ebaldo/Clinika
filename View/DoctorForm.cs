@@ -19,7 +19,7 @@ namespace Clinica.View
         {
             AllDoctor.AutoGenerateColumns = false;
             AllDoctor.DataSource = doctorService.GetAllDoctors();
-            AllDoctor.Columns["IDPole"].DataPropertyName = "id";
+            AllDoctor.Columns["IDPole"].DataPropertyName = "Id";
             AllDoctor.Columns["Name"].DataPropertyName = "FirstName";
             AllDoctor.Columns["LastName"].DataPropertyName = "LastName";
             AllDoctor.Columns["Roles"].DataPropertyName = "Specialization";

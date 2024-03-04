@@ -29,11 +29,11 @@ namespace Clinica.View
             AllHistory.AutoGenerateColumns = false;
             AllHistory.DataSource = diseaseService.GetAllDiseases();
             AllHistory.Columns["IDPole"].DataPropertyName = "Id";
-            AllHistory.Columns["PatientNamePole"].DataPropertyName = "FirstName";
-            AllHistory.Columns["PatientLastNamePole"].DataPropertyName = "LastName";
+            AllHistory.Columns["PatientNamePole"].DataPropertyName = "PatientFirstName";
+            AllHistory.Columns["PatientLastNamePole"].DataPropertyName = "PatientLastName";
             AllHistory.Columns["DataStartPole"].DataPropertyName = "StartDay";
             AllHistory.Columns["DataEndPole"].DataPropertyName = "StopDay";
-            AllHistory.Columns["DiagnosePole"].DataPropertyName = "Description";
+            AllHistory.Columns["DiagnosePole"].DataPropertyName = "Desctiprion";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
