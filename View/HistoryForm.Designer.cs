@@ -43,11 +43,9 @@
             EditBtn = new Button();
             SealBtn = new Button();
             DeleteBtn = new Button();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             Diagnosis = new TextBox();
-            Medicines = new TextBox();
             label1 = new Label();
             AllHistory = new DataGridView();
             startDay = new MaskedTextBox();
@@ -226,16 +224,6 @@
             DeleteBtn.UseVisualStyleBackColor = false;
             DeleteBtn.Click += DeleteBtn_Click;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(704, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(246, 22);
-            label4.TabIndex = 51;
-            label4.Text = "Прописанные лекарство";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -267,18 +255,6 @@
             Diagnosis.Name = "Diagnosis";
             Diagnosis.Size = new Size(131, 27);
             Diagnosis.TabIndex = 2;
-            // 
-            // Medicines
-            // 
-            Medicines.BackColor = Color.LightSkyBlue;
-            Medicines.BorderStyle = BorderStyle.FixedSingle;
-            Medicines.Cursor = Cursors.IBeam;
-            Medicines.Font = new Font("Century Gothic", 12F);
-            Medicines.ForeColor = Color.FromArgb(15, 15, 15);
-            Medicines.Location = new Point(704, 51);
-            Medicines.Name = "Medicines";
-            Medicines.Size = new Size(161, 27);
-            Medicines.TabIndex = 3;
             // 
             // label1
             // 
@@ -403,11 +379,9 @@
             Controls.Add(EditBtn);
             Controls.Add(SealBtn);
             Controls.Add(DeleteBtn);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(Diagnosis);
-            Controls.Add(Medicines);
             Controls.Add(label1);
             Controls.Add(AllHistory);
             FormBorderStyle = FormBorderStyle.None;
@@ -436,11 +410,9 @@
         private Button EditBtn;
         private Button SealBtn;
         private Button DeleteBtn;
-        private Label label4;
         private Label label3;
         private Label label2;
         private TextBox Diagnosis;
-        private TextBox Medicines;
         private Label label1;
         private DataGridView AllHistory;
         private MaskedTextBox startDay;

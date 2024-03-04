@@ -26,7 +26,19 @@ namespace Clinica.View
 
         private void PatientForm_Load(object sender, EventArgs e)
         {
-            AllPatient.DataSource = patientService.GetAllPatients();
+            List<Kostil> list = new List<Kostil>();
+            foreach (var i in patientService.GetAllPatients()) {
+                list.Add(new Kostil(
+                    i.Id,
+                    i.FirstName,
+                    i.LastName,
+                    i.BirthDay,
+                    i.Adress,
+                    i.PhoneNumber
+                    ));
+            }
+            AllPatient.DataSource = list;
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -88,13 +100,37 @@ namespace Clinica.View
                 null
              );
             patientService.CreatePatient(newPatient);
-            AllPatient.DataSource = patientService.GetAllPatients();
+            List<Kostil> list = new List<Kostil>();
+            foreach (var i in patientService.GetAllPatients())
+            {
+                list.Add(new Kostil(
+                    i.Id,
+                    i.FirstName,
+                    i.LastName,
+                    i.BirthDay,
+                    i.Adress,
+                    i.PhoneNumber
+                    ));
+            }
+            AllPatient.DataSource = list;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             patientService.DeletePatientById(int.Parse(ID));
-            AllPatient.DataSource = patientService.GetAllPatients();
+            List<Kostil> list = new List<Kostil>();
+            foreach (var i in patientService.GetAllPatients())
+            {
+                list.Add(new Kostil(
+                    i.Id,
+                    i.FirstName,
+                    i.LastName,
+                    i.BirthDay,
+                    i.Adress,
+                    i.PhoneNumber
+                    ));
+            }
+            AllPatient.DataSource = list;
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -109,7 +145,19 @@ namespace Clinica.View
                 null
              );
             patientService.UpdatePatient(newPatient);
-            AllPatient.DataSource = patientService.GetAllPatients();
+            List<Kostil> list = new List<Kostil>();
+            foreach (var i in patientService.GetAllPatients())
+            {
+                list.Add(new Kostil(
+                    i.Id,
+                    i.FirstName,
+                    i.LastName,
+                    i.BirthDay,
+                    i.Adress,
+                    i.PhoneNumber
+                    ));
+            }
+            AllPatient.DataSource = list;
         }
 
         private void AllPatient_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -121,7 +169,6 @@ namespace Clinica.View
             Birthday.Text = selectedCells[3].Value.ToString();
             Number.Text = selectedCells[4].Value.ToString();
             Email.Text = selectedCells[5].Value.ToString();
-            Diagnos.Text = selectedCells[6].Value.ToString();
         }
 
         private string result = "";

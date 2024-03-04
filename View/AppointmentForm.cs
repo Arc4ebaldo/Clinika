@@ -119,8 +119,8 @@ namespace Clinica.View
                 Fio_Doctor[1],
                 Problem.Text
              );
-                appointmentService.UpdateAppointment(newAppoint);
-                AllAppointment.DataSource = appointmentService.GetAllAppointment();
+            appointmentService.UpdateAppointment(newAppoint);
+            AllAppointment.DataSource = appointmentService.GetAllAppointment();
         }
 
         private void AllAppointment_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -164,6 +164,24 @@ namespace Clinica.View
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void FindBtn_Click(object sender, EventArgs e)
+        {
+            string[] Fio_Patient = ID_Patient.Text.Split(" ");
+            if (AllAppointment.DataSource is List<Doctor> doctorsList)
+            {
+                foreach (var i in doctorsList)
+                {
+                    if (i.FirstName == Fio_Patient[0] && i.LastName == Fio_Patient[1])
+                    {
+                        AllAppointment.DataSource = new List<Doctor>() { i };
+                        return;
+                    }
+
+                  
+                }
+            }
         }
     }
 }

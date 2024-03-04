@@ -147,6 +147,7 @@
             FindBtn.TabIndex = 57;
             FindBtn.Text = "ПОИСК";
             FindBtn.UseVisualStyleBackColor = false;
+            FindBtn.Click += FindBtn_Click;
             // 
             // AddBtn
             // 

@@ -22,7 +22,6 @@ public class PatientDTO
         BirthDay = birthDay;
         Adress = adress;
         PhoneNumber = phoneNumber;
-        Diseases = diseases;
     }
 
     public PatientDTO(

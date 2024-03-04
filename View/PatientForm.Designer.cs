@@ -54,8 +54,6 @@
             pictureBox1 = new PictureBox();
             pictureBox4 = new PictureBox();
             Birthday = new MaskedTextBox();
-            label6 = new Label();
-            Diagnos = new TextBox();
             ((System.ComponentModel.ISupportInitialize)AllPatient).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -384,36 +382,12 @@
             Birthday.TabIndex = 2;
             Birthday.ValidatingType = typeof(DateTime);
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label6.Location = new Point(795, 9);
-            label6.Name = "label6";
-            label6.Size = new Size(87, 22);
-            label6.TabIndex = 21;
-            label6.Text = "Диагноз";
-            // 
-            // Diagnos
-            // 
-            Diagnos.BackColor = Color.LightSkyBlue;
-            Diagnos.BorderStyle = BorderStyle.FixedSingle;
-            Diagnos.Cursor = Cursors.IBeam;
-            Diagnos.Font = new Font("Century Gothic", 12F);
-            Diagnos.ForeColor = Color.FromArgb(15, 15, 15);
-            Diagnos.Location = new Point(795, 51);
-            Diagnos.Name = "Diagnos";
-            Diagnos.Size = new Size(115, 27);
-            Diagnos.TabIndex = 22;
-            // 
             // PatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 93, 142);
             ClientSize = new Size(1045, 682);
-            Controls.Add(Diagnos);
-            Controls.Add(label6);
             Controls.Add(Birthday);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox1);
@@ -473,7 +447,5 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;
         private MaskedTextBox Birthday;
-        private Label label6;
-        private TextBox Diagnos;
     }
 }

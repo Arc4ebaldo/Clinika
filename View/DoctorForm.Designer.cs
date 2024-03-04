@@ -54,6 +54,12 @@
             First_Name = new TextBox();
             label1 = new Label();
             AllDoctor = new DataGridView();
+            IDPole = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Roles = new DataGridViewTextBoxColumn();
+            numbers = new DataGridViewTextBoxColumn();
+            Emails = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -358,6 +364,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllDoctor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllDoctor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllDoctor.Columns.AddRange(new DataGridViewColumn[] { IDPole, Name, LastName, Roles, numbers, Emails });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -380,6 +387,46 @@
             AllDoctor.Size = new Size(853, 566);
             AllDoctor.TabIndex = 21;
             AllDoctor.RowHeaderMouseClick += AllDoctor_RowHeaderMouseClick;
+            // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // Name
+            // 
+            Name.HeaderText = "Имя";
+            Name.Name = "Name";
+            Name.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            LastName.HeaderText = "Фамилия";
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            // 
+            // Roles
+            // 
+            Roles.HeaderText = "Специализация";
+            Roles.Name = "Roles";
+            Roles.ReadOnly = true;
+            Roles.Width = 150;
+            // 
+            // numbers
+            // 
+            numbers.HeaderText = "Номер телефона";
+            numbers.Name = "numbers";
+            numbers.ReadOnly = true;
+            numbers.Width = 200;
+            // 
+            // Emails
+            // 
+            Emails.HeaderText = "Адрес эл. почты";
+            Emails.Name = "Emails";
+            Emails.ReadOnly = true;
+            Emails.Width = 200;
             // 
             // DoctorForm
             // 
@@ -409,7 +456,6 @@
             Controls.Add(label1);
             Controls.Add(AllDoctor);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "DoctorForm";
             Text = "DoctorForm";
             Load += DoctorForm_Load;
             MouseMove += DoctorForm_MouseMove;
@@ -445,5 +491,11 @@
         private TextBox First_Name;
         private Label label1;
         private DataGridView AllDoctor;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn Roles;
+        private DataGridViewTextBoxColumn numbers;
+        private DataGridViewTextBoxColumn Emails;
     }
 }

@@ -26,8 +26,15 @@ namespace Clinica.View
 
         private void DoctorForm_Load(object sender, EventArgs e)
         {
+            AllDoctor.AutoGenerateColumns = false;
             AllDoctor.DataSource = doctorService.GetAllDoctors();
-            Role.DataSource = new List<string>() { };
+            AllDoctor.Columns["IDPole"].DataPropertyName = "id";
+            AllDoctor.Columns["Name"].DataPropertyName = "FirstName";
+            AllDoctor.Columns["LastName"].DataPropertyName = "LastName";
+            AllDoctor.Columns["Roles"].DataPropertyName = "Specialization";
+            AllDoctor.Columns["numbers"].DataPropertyName = "PhoneNumber";
+            AllDoctor.Columns["Emails"].DataPropertyName = "Email";
+            Role.DataSource = new List<string>() { "Главный врач", "Ортодонт", "Имплантолог", "Хирург", "Эндодонтист", "Пародонтолог" };
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
