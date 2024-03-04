@@ -26,6 +26,7 @@ namespace Clinica.View
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
+            AllHistory.AutoGenerateColumns = false;
             AllHistory.DataSource = diseaseService.GetAllDiseases();
             AllHistory.Columns["IDPole"].DataPropertyName = "Id";
             AllHistory.Columns["PatientNamePole"].DataPropertyName = "FirstName";

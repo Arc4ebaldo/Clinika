@@ -37,8 +37,8 @@ namespace Clinica.View
                     i.PhoneNumber
                     ));
             }
-            AllPatient.DataSource = list;
             AllPatient.AutoGenerateColumns = false;
+            AllPatient.DataSource = list;
             AllPatient.Columns["IDPole"].DataPropertyName = "Id";
             AllPatient.Columns["NamePole"].DataPropertyName = "FirstName";
             AllPatient.Columns["LastNamePole"].DataPropertyName = "LastName";
@@ -171,7 +171,7 @@ namespace Clinica.View
             DataGridViewSelectedCellCollection selectedCells = AllPatient.SelectedCells;
             ID = selectedCells[0].Value.ToString();
             First_Name.Text = selectedCells[1].Value.ToString();
-            Last_Name.Text = (selectedCells[2].Value.ToString());
+            Last_Name.Text = selectedCells[2].Value.ToString();
             Birthday.Text = selectedCells[3].Value.ToString();
             Number.Text = selectedCells[4].Value.ToString();
             Email.Text = selectedCells[5].Value.ToString();

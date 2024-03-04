@@ -36,7 +36,7 @@ namespace Clinica.View
             AllAppointment.Columns["PatientLastNamePole"].DataPropertyName = "PatientLastName";
             AllAppointment.Columns["DoctorNamePole"].DataPropertyName = "DoctorFirstName";
             AllAppointment.Columns["DoctorLastNamePole"].DataPropertyName = "DoctorLastName";
-            AllAppointment.Columns["ProblemPole"].DataPropertyName = "Description";
+            AllAppointment.Columns["ProblemPole"].DataPropertyName = "Desctiprion";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
