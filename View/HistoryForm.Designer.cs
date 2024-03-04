@@ -52,6 +52,12 @@
             label5 = new Label();
             stopDay = new MaskedTextBox();
             ID_Patient = new TextBox();
+            IDPole = new DataGridViewTextBoxColumn();
+            PatientNamePole = new DataGridViewTextBoxColumn();
+            PatientLastNamePole = new DataGridViewTextBoxColumn();
+            DataStartPole = new DataGridViewTextBoxColumn();
+            DataEndPole = new DataGridViewTextBoxColumn();
+            DiagnosePole = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -286,6 +292,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             AllHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             AllHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllHistory.Columns.AddRange(new DataGridViewColumn[] { IDPole, PatientNamePole, PatientLastNamePole, DataStartPole, DataEndPole, DiagnosePole });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle3.BackColor = Color.LightSkyBlue;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -359,6 +366,45 @@
             ID_Patient.Size = new Size(131, 27);
             ID_Patient.TabIndex = 65;
             // 
+            // IDPole
+            // 
+            IDPole.HeaderText = "ID";
+            IDPole.Name = "IDPole";
+            IDPole.ReadOnly = true;
+            IDPole.Visible = false;
+            // 
+            // PatientNamePole
+            // 
+            PatientNamePole.HeaderText = "Имя пациента";
+            PatientNamePole.Name = "PatientNamePole";
+            PatientNamePole.ReadOnly = true;
+            // 
+            // PatientLastNamePole
+            // 
+            PatientLastNamePole.HeaderText = "Фамилия пациента";
+            PatientLastNamePole.Name = "PatientLastNamePole";
+            PatientLastNamePole.ReadOnly = true;
+            // 
+            // DataStartPole
+            // 
+            DataStartPole.HeaderText = "Дата начала лечения";
+            DataStartPole.Name = "DataStartPole";
+            DataStartPole.ReadOnly = true;
+            DataStartPole.Width = 150;
+            // 
+            // DataEndPole
+            // 
+            DataEndPole.HeaderText = "Дата конца лечения";
+            DataEndPole.Name = "DataEndPole";
+            DataEndPole.ReadOnly = true;
+            DataEndPole.Width = 150;
+            // 
+            // DiagnosePole
+            // 
+            DiagnosePole.HeaderText = "Диагноз";
+            DiagnosePole.Name = "DiagnosePole";
+            DiagnosePole.ReadOnly = true;
+            // 
             // HistoryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -419,5 +465,11 @@
         private Label label5;
         private MaskedTextBox stopDay;
         private TextBox ID_Patient;
+        private DataGridViewTextBoxColumn IDPole;
+        private DataGridViewTextBoxColumn PatientNamePole;
+        private DataGridViewTextBoxColumn PatientLastNamePole;
+        private DataGridViewTextBoxColumn DataStartPole;
+        private DataGridViewTextBoxColumn DataEndPole;
+        private DataGridViewTextBoxColumn DiagnosePole;
     }
 }
