@@ -28,7 +28,15 @@ namespace Clinica.View
 
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
+            AllAppointment.AutoGenerateColumns = false;
             AllAppointment.DataSource = appointmentService.GetAllAppointment();
+            AllAppointment.Columns["IDPole"].DataPropertyName = "Id";
+            AllAppointment.Columns["DataPole"].DataPropertyName = "DataTime";
+            AllAppointment.Columns["PatientNamePole"].DataPropertyName = "PatientFirstName";
+            AllAppointment.Columns["PatientLastNamePole"].DataPropertyName = "PatientLastName";
+            AllAppointment.Columns["DoctorNamePole"].DataPropertyName = "DoctorFirstName";
+            AllAppointment.Columns["DoctorLastNamePole"].DataPropertyName = "DoctorLastName";
+            AllAppointment.Columns["ProblemPole"].DataPropertyName = "Description";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

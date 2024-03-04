@@ -17,7 +17,7 @@ public class ServiceService
     {
         Repo.Create(new Service(
             newService.Name,
-            newService.Desctiprion,
+            newService.Description,
             int.Parse(newService.Cost)
         ));
     }
@@ -53,7 +53,7 @@ public class ServiceService
         return new Service(
             serviceDTO.Id is null ? 0:int.Parse(serviceDTO.Id),
             serviceDTO.Name,
-            serviceDTO.Desctiprion,
+            serviceDTO.Description,
             int.Parse(serviceDTO.Cost)
         );
     }

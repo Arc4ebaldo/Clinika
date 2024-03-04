@@ -27,6 +27,12 @@ namespace Clinica.View
         private void HistoryForm_Load(object sender, EventArgs e)
         {
             AllHistory.DataSource = diseaseService.GetAllDiseases();
+            AllHistory.Columns["IDPole"].DataPropertyName = "Id";
+            AllHistory.Columns["PatientNamePole"].DataPropertyName = "FirstName";
+            AllHistory.Columns["PatientLastNamePole"].DataPropertyName = "LastName";
+            AllHistory.Columns["DataStartPole"].DataPropertyName = "StartDay";
+            AllHistory.Columns["DataEndPole"].DataPropertyName = "StopDay";
+            AllHistory.Columns["DiagnosePole"].DataPropertyName = "Description";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

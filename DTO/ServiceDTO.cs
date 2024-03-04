@@ -16,7 +16,7 @@ public class ServiceDTO
         )
     {
         Name = name;
-        Desctiprion = desctiprion;
+        Description = desctiprion;
         Cost = cost;
     }
 
@@ -32,6 +32,6 @@ public class ServiceDTO
 
     public string? Id { get; set; }
     public string Name { get; set; }
-    public string Desctiprion { get; set; }
+    public string Description { get; set; }
     public string Cost { get; set; }
 }

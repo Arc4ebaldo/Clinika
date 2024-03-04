@@ -27,6 +27,10 @@ namespace Clinica.View
         private void ServiceForm_Load(object sender, EventArgs e)
         {
             AllService.DataSource = serviceService.GetAllServices();
+            AllService.Columns["IDPole"].DataPropertyName = "Id";
+            AllService.Columns["DescriptionPole"].DataPropertyName = "Description";
+            AllService.Columns["PricePole"].DataPropertyName = "Cost";
+            AllService.Columns["NamePole"].DataPropertyName = "Name";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

@@ -38,7 +38,13 @@ namespace Clinica.View
                     ));
             }
             AllPatient.DataSource = list;
-
+            AllPatient.AutoGenerateColumns = false;
+            AllPatient.Columns["IDPole"].DataPropertyName = "Id";
+            AllPatient.Columns["NamePole"].DataPropertyName = "FirstName";
+            AllPatient.Columns["LastNamePole"].DataPropertyName = "LastName";
+            AllPatient.Columns["BirthdayPole"].DataPropertyName = "BirthDay";
+            AllPatient.Columns["NumberPole"].DataPropertyName = "PhoneNumber";
+            AllPatient.Columns["EmailPole"].DataPropertyName = "Adress";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
